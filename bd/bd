@@ -1,0 +1,19 @@
+
+CREATE TABLE visitas (
+  vis_id serial not null PRIMARY KEY,
+  vis_nombre varchar(25) not null,
+  vis_dpi varchar(15) not null,
+  vis_h_ingreso interval hour to minute not null,
+  vis_h_salida interval hour to minute not null
+);
+
+CREATE TABLE vivienda (
+  viv_id serial not null PRIMARY KEY,
+  viv_num_viv int not null, 
+  viv_nombre varchar(25) not null,
+  viv_fecha DATE not null,
+  viv_visitante VARCHAR(25) not null,
+  vis_id INT,
+  FOREIGN KEY (vis_id) REFERENCES visitas(vis_id)
+);
+
