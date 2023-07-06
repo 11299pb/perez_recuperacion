@@ -38,11 +38,11 @@ try {
                         </td>
                         </tr>
                         <tr>
-                            <th>NO.</th>
+                            <th>No.</th>
+                            <th>Num. Vivienda</th>
                             <th>NOMBRE</th>
-                            <th>DPI</th>
-                            <th>HORA DE ENTRADA</th>
-                            <th>HORA DE SALIDA</th>
+                            <th>FECHA</th>
+                            <th>NOMBRE A QUIEN VISITA</th>
                             
                         </tr>
                         <?php if(count($visitas) > 0):?>
