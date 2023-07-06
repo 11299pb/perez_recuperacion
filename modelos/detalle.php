@@ -1,40 +1,40 @@
 <?php
 require_once 'Conexion.php';
 
-class det extends Conexion{
-    public $vis_id;
-    public $vis_nombre;
-    public $vis_dpi;
-    public $vis_h_ingreso;
-    public $vis_h_salida;
-    public $vis_situacion;
+class Condominio extends Conexion{
+    public $condominio_id;
+    public $condominio_nombre;
+    public $condominio_direccion;
+    public $condominio_h_ingreso;
+    public $condominio_h_salida;
+    public $condominio_situacion;
 
 
     public function __construct($args = [] )
     {
-        $this->vis_id = $args['vis_id'] ?? null;
-        $this->vis_nombre = $args['vis_nombre'] ?? '';
-        $this->vis_dpi = $args['vis_dpi'] ?? '';
-        $this->vis_h_ingreso = $args['vis_h_ingreso'] ?? '';
-        $this->vis_h_salida = $args['vis_h_salida'] ?? '';
+        $this->condominio_id = $args['condominio_id'] ?? null;
+        $this->condominio_nombre = $args['condominio_nombre'] ?? '';
+        $this->condominio_dpi = $args['condominio_dpi'] ?? '';
+        $this->condominio_h_ingreso = $args['condominio_h_ingreso'] ?? '';
+        $this->condominio_h_salida = $args['condominio_h_salida'] ?? '';
         $this->det_situacion = $args['det_situacion'] ?? '';
     }
 
     public function guardar(){
-        $sql = "INSERT INTO visitas(vis_id, vis_nombre, vis_dpi, vis_h_ingreso, vis_h_salida) values('$this->vis_id','$this->vis_nombre', '$this->vis_dpi', '$this->vis_h_ingreso', '$this->vis_h_salida')";
+        $sql = "INSERT INTO condominioitas(condominio_id, condominio_nombre, condominio_dpi, condominio_h_ingreso, condominio_h_salida) values('$this->condominio_id','$this->condominio_nombre', '$this->condominio_dpi', '$this->condominio_h_ingreso', '$this->condominio_h_salida')";
         $resultado = self::ejecutar($sql);
         return $resultado;
     }
 
     public function buscar(){
-        $sql = "SELECT vis_nombre, vis_dpi, vis_h_ingreso, vis_h_salida
-        FROM visitas;";
+        $sql = "SELECT condominio_nombre, condominio_dpi, condominio_h_ingreso, condominio_h_salida
+        FROM condominioitas;";
 
-        if($this->vis_nombre != ''){
-            $sql .= " and vis_nombre = $this->vis_nombre ";
+        if($this->condominio_nombre != ''){
+            $sql .= " and condominio_nombre = $this->condominio_nombre ";
         }
 
-        $sql .= " group by vis_nombre";
+        $sql .= " group by condominio_nombre";
 
 
         // echo $sql;
