@@ -27,7 +27,7 @@ require '../../modelos/vivienda.php';
                     </thead>
                     <tbody>
                     <tr class="text-center table-dark">
-                        <td colspan="6"><center>Registro de Datos de cada vivienda (<?= $fecha ?>)</center></td>
+                        <td colspan="6"><center>VISITAS DEL DÍA DE HOY (<?= $fecha ?>)</center></td>
                     </tr>
                     <?php if (!empty($busqueda)): ?>
                         <?php $viviendaActual = ''; $visitaActual = ''; ?>
@@ -40,14 +40,14 @@ require '../../modelos/vivienda.php';
                                 <table class="table table-pink">
                                     <thead>
                                         <tr class="text-center table-pink">
-                                            <th colspan="6">VIVIENDA: <?= $fila['VIV_NOMBRE'] ?> (<?= $fila['VIS_NOMBRE'] ?>)</th>
+                                            <th colspan="6">CONDOMINIO: <?= $fila['VIV_NOMBRE'] ?> (<?= $fila['VIS_NOMBRE'] ?>)</th>
                                         </tr>
                                         <tr class="text-center table-secundary">
                                             <th>NO</th>
                                             <th>NUM. VIVIENDA</th>
                                             <th>NOMBRE DEL VISITANTE</th>
-                                            <th>FECHA</th>
-                                            <th>NOMBRE A QUIEN VISITA</th>
+                                            <th>FECHA DE LA VISITA</th>
+                                            <th>NOMBRE DEL QUE VISITA</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -65,7 +65,7 @@ require '../../modelos/vivienda.php';
                         </table>
                     <?php else: ?>
                         <tr>
-                            <td colspan="6"><center>SIN VISITAS</center></td>
+                            <td colspan="6"><center>SIN CITAS</center></td>
                         </tr>
                     <?php endif ?>
                     </tbody>

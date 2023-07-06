@@ -48,7 +48,7 @@ require '../../modelos/visita.php';
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/perez_recuperacion/controladores/visita/buscar.php" class="btn btn-info">Regresar al formulario</a>
+                <a href="/perez_recuperacion/controladores/visita/eliminar.php" class="btn btn-info">Regresar al formulario</a>
             </div>
         </div>
     </div>

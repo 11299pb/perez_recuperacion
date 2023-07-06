@@ -34,10 +34,6 @@
                         <li class="nav-item">
                             <a class="nav-link" href="/perez_recuperacion/vistas/visita/buscar.php">Buscar visitas</a>
                         </li>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="/perez_recuperacion/vistas/visita/detalle.php">Detalle de la visita</a>
-                        </li>
                     </ul>
                 </li>
               

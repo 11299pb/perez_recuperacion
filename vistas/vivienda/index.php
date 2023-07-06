@@ -36,8 +36,8 @@ require_once '../../modelos/vivienda.php';
                 </div>
                 <div class="row mb-3">
                     <div class="col">
-                        <label for="viv_visitante" style="color: #333;">Nombre a quien vivienda</label>
-                        <input type="text" name="viv_visitante" id="viv_visitante" class="form-control" style="border-color: #ced4da;">
+                        <label for="viv_nombre" style="color: #333;">Nombre a quien visita</label>
+                        <input type="text" name="viv_nombre" id="viv_nombre" class="form-control" style="border-color: #ced4da;">
                     </div>
                 </div>
                 

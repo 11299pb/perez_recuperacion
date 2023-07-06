@@ -48,7 +48,7 @@ if($_POST['vis_nombre'] != '' && $_POST['vis_dpi'] != '' && $_POST['vis_h_ingres
         </div>
         <div class="row">
             <div class="col-lg-4">
-                <a href="/perez_recuperacion/vistas/visita/index.php" class="btn btn-info">Regresar al formulario</a>
+                <a href="/perez_recuperacion/vistas/visita/guardar.php" class="btn btn-info">Regresar al formulario</a>
             </div>
         </div>
     </div>
