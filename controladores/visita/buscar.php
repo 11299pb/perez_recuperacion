@@ -40,10 +40,9 @@ try {
                         <?php foreach($visitas as $key => $visita) : ?>
                         <tr>
                             <td><?= $key + 1 ?></td>
-                            <td><?= $visita['VIS_NOMBRE'] ?></td>
-                            <td><?= $visita['VIS_DPI'] ?></td>
-                            <td><?= $visita['VIS_H_INGRESO'] ?></td>
-                            <td><?= $visita['VIS_H_SALIDA'] ?></td>
+                            <td><?= $visita['PACI_NOMBRE'] ?></td>
+                            <td><?= $visita['PACI_DPI'] ?></td>
+                            <td><?= $visita['PACI_HORA'] ?></td>
                             
                         </tr>
                         <?php endforeach ?>
@@ -58,7 +57,7 @@ try {
         </div>
         <div class="row justify-content-center">
             <div class="col-lg-4">
-                <a href="/perez_recuperacion/vistas/visita/buscar.php" class="btn btn-info w-100">Volver a la busqueda</a>
+                <a href="/final_perez/vistas/visitas/buscar.php" class="btn btn-info w-100">Volver a la busqueda</a>
             </div>
         </div>
     </div>

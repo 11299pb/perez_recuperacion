@@ -1,7 +1,7 @@
 <?php
 require_once 'Conexion.php';
 
-class visente extends Conexion{
+class Visita extends Conexion{
     public $vis_id;
     public $vis_nombre;
     public $vis_dpi;
@@ -21,7 +21,8 @@ class visente extends Conexion{
     }
 
     public function guardar(){
-        $sql = "INSERT INTO visitas(vis_nombre, vis_dpi, vis_h_ingreso, vis_h_salida) values('$this->vis_nombre','$this->vis_dpi','$this->vis_h_ingreso', '$this->vis_h_salida)";
+        $sql = "SELECT vis_id, vis_nombre, vis_dpi, vis_h_ingreso, vis_h_salida, vis_situacion
+        FROM visitas;";
         $resultado = self::ejecutar($sql);
         return $resultado;
     }
@@ -34,14 +35,14 @@ class visente extends Conexion{
         }
 
         if($this->vis_dpi != ''){
-            $sql .= " and vis_dpi = $this->vis_dpi ";
+            $sql .= " and vis_dpi = %$this->vis_dpi% ";
         }
         if($this->vis_h_ingreso != ''){
-            $sql .= " and vis_h_ingreso = $this->vis_h_ingreso ";
+            $sql .= " and vis_h_ingreso = %$this->vis_h_ingreso% ";
         }
 
         if($this->vis_id != null){
-            $sql .= " and vis_id = $this->vis_id ";
+            $sql .= " and vis_id = %$this->vis_id% ";
         }
 
         $resultado = self::servir($sql);
@@ -49,16 +50,29 @@ class visente extends Conexion{
     }
 
     public function modificar(){
-        $sql = "UPDATE visitas SET vis_nombre = '$this->vis_nombre', vis_dpi = '$this->vis_dpi' , vis_h_ingreso = '$this->vis_h_ingreso', vis_h_salida = '$this->vis_h_salida'  where vis_id = $this->vis_id";
+        $sql = "UPDATE visitas SET vis_nombre = '$this->vis_nombre', vis_dpi = '$this->vis_dpi', vis_h_ingreso = '$this->vis_h_ingreso', vis_h_salida = '$this->vis_h_salida', vis_situacion = $this->vis_situacion WHERE vis_id = $this->vis_id";
+
         
         $resultado = self::ejecutar($sql);
         return $resultado;
     }
 
     public function eliminar(){
-        $sql = "UPDATE visitas SET vis_situacion = 0 where vis_id = $this->vis_id";
+        $sql = "UPDATE visitas SET vis_situacion = 0 WHERE vis_id = $this->vis_id";
+
         
         $resultado = self::ejecutar($sql);
         return $resultado;
+    }
+    public function busqueda(){
+        
+
+        $sql = "  SELECT vis_nombre, vis_dpi, vis_h_ingreso, vis_h_salida
+        FROM visitas; ";
+
+
+        $resultado = self::servir($sql);
+        return $resultado;
+
     }
 }

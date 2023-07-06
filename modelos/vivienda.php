@@ -20,7 +20,7 @@ class Vivienda extends Conexion{
         $this->viv_situacion = $args['viv_situacion'] ?? '';
     }
 
-        public function setvivFecha($fecha) {
+        public function viviendaFecha($fecha) {
             $sql = "SELECT * FROM vivienda where $this->viv_fecha = $fecha";
         }
     
@@ -66,7 +66,7 @@ class Vivienda extends Conexion{
         return $resultado;
     }
 
-    public function eliminasr(){
+    public function eliminar(){
         $sql = "UPDATE vivienda SET viv_situacion = 0 where viv_id = $this->viv_id";
         
         $resultado = self::ejecutar($sql);
