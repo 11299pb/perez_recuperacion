@@ -7,7 +7,7 @@ require '../../modelos/vivienda.php';
     try {
    
    $fecha = date('d/m/Y');
-   $buscar = new Cita();
+   $buscar = new Vivienda();
 
    $busqueda= $buscar->busqueda();
 
@@ -27,7 +27,7 @@ require '../../modelos/vivienda.php';
                     </thead>
                     <tbody>
                     <tr class="text-center table-dark">
-                        <td colspan="6"><center>VISITAS DEL DÍA DE HOY (<?= $fecha ?>)</center></td>
+                        <td colspan="6"><center>INGRESOS DEL DIA (<?= $fecha ?>)</center></td>
                     </tr>
                     <?php if (!empty($busqueda)): ?>
                         <?php $viviendaActual = ''; $visitaActual = ''; ?>
@@ -65,7 +65,7 @@ require '../../modelos/vivienda.php';
                         </table>
                     <?php else: ?>
                         <tr>
-                            <td colspan="6"><center>SIN CITAS</center></td>
+                            <td colspan="6"><center>SIN INGRESOS</center></td>
                         </tr>
                     <?php endif ?>
                     </tbody>

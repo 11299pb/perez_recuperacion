@@ -14,7 +14,7 @@
                 <div class="row mb-3">
                     <div class="col">
                         <label for="vis_dpi" style="color: #333;">No. de DPI</label>
-                        <input type="text" name="vis_dpi" id="vis_dpi" class="form-control" style="border-color: #ced4da;">
+                        <input type="number" name="vis_dpi" id="vis_dpi" class="form-control" style="border-color: #ced4da;">
                     </div>
                 </div>
                 <div class="row mb-3">

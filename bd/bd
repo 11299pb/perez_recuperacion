@@ -1,19 +1,29 @@
 
-CREATE TABLE visitas (
-  vis_id serial not null PRIMARY KEY,
-  vis_nombre varchar(25) not null,
-  vis_dpi varchar(15) not null,
-  vis_h_ingreso interval hour to minute not null,
-  vis_h_salida interval hour to minute not null
-);
-
 CREATE TABLE vivienda (
   viv_id serial not null PRIMARY KEY,
   viv_num_viv int not null, 
   viv_nombre varchar(25) not null,
   viv_fecha DATE not null,
   viv_visitante VARCHAR(25) not null,
+  viv_situacion smallint not null default 1,
   vis_id INT,
-  FOREIGN KEY (vis_id) REFERENCES visitas(vis_id)
+  condominio_id INT, -- Nueva columna para la relación con condominios
+  FOREIGN KEY (vis_id) REFERENCES visitas(vis_id),
+  FOREIGN KEY (condominio_id) REFERENCES condominios(condominio_id) -- Clave foránea para la relación con condominios
 );
 
+CREATE TABLE condominios (
+  condominio_id serial not null PRIMARY KEY,
+  condominio_nombre varchar(50) not null,
+  condominio_numero integer not null,
+  condominio_situacion smallint not null default 1
+);
+
+CREATE TABLE visitas (
+  vis_id serial not null PRIMARY KEY,
+  vis_nombre varchar(25) not null,
+  vis_dpi varchar(15) not null,
+  vis_h_ingreso interval hour to minute not null,
+  vis_h_salida interval hour to minute not null,
+  vis_situacion smallint not null default 1
+);

@@ -4,7 +4,7 @@
 require '../../modelos/vivienda.php';
 
 
-if($_POST['viv_num_viv'] != '' && $_POST['viv_nombre'] != '' && $_POST['viv_fecha'] != '' && $_POST['viv_visitante'] != '' && $_POST['cit_referencia'] != ''){
+if($_POST['viv_num_viv'] != '' && $_POST['viv_nombre'] != '' && $_POST['viv_fecha'] != '' && $_POST['viv_visitante'] != ''){
     
 
 $_POST['viv_fecha']= date('d/m/Y', strtotime($_POST['viv_fecha']));

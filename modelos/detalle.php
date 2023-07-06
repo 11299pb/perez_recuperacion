@@ -4,9 +4,7 @@ require_once 'Conexion.php';
 class Condominio extends Conexion{
     public $condominio_id;
     public $condominio_nombre;
-    public $condominio_direccion;
-    public $condominio_h_ingreso;
-    public $condominio_h_salida;
+    public $condominio_numero;
     public $condominio_situacion;
 
 
@@ -14,21 +12,20 @@ class Condominio extends Conexion{
     {
         $this->condominio_id = $args['condominio_id'] ?? null;
         $this->condominio_nombre = $args['condominio_nombre'] ?? '';
-        $this->condominio_dpi = $args['condominio_dpi'] ?? '';
-        $this->condominio_h_ingreso = $args['condominio_h_ingreso'] ?? '';
-        $this->condominio_h_salida = $args['condominio_h_salida'] ?? '';
-        $this->det_situacion = $args['det_situacion'] ?? '';
+        $this->condominio_numero = $args['condominio_numero'] ?? '';
+        $this->condominio_situacion = $args['condominio_situacion'] ?? '';
+        
     }
 
     public function guardar(){
-        $sql = "INSERT INTO condominioitas(condominio_id, condominio_nombre, condominio_dpi, condominio_h_ingreso, condominio_h_salida) values('$this->condominio_id','$this->condominio_nombre', '$this->condominio_dpi', '$this->condominio_h_ingreso', '$this->condominio_h_salida')";
+        $sql = "INSERT INTO condominios(condominio_id, condominio_nombre, condominio_numero, condominio_situacion) values('$this->condominio_id','$this->condominio_nombre', '$this->condominio_numero', '$this->condominio_situacion)";
         $resultado = self::ejecutar($sql);
         return $resultado;
     }
 
     public function buscar(){
-        $sql = "SELECT condominio_nombre, condominio_dpi, condominio_h_ingreso, condominio_h_salida
-        FROM condominioitas;";
+        $sql = "SELECT condominio_id, condominio_nombre, condominio_numero, condominio_situacion
+        FROM condominios;";
 
         if($this->condominio_nombre != ''){
             $sql .= " and condominio_nombre = $this->condominio_nombre ";

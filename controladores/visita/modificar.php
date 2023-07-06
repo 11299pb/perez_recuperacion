@@ -5,7 +5,7 @@ require '../../modelos/visita.php';
 if($_POST['vis_nombre'] != '' && $_POST['vis_dpi']  != '' && $_POST['vis_h_ingreso']  != '' && $_POST['vis_h_salida'] != ''){
 
     try {
-        $visita = new visita($_POST);
+        $visita = new Visita($_POST);
         $resultado = $visita->modificar();
 
     } catch (PDOException $e) {

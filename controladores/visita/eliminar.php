@@ -3,7 +3,7 @@ require '../../modelos/visita.php';
 
 
     try {
-        $visita = new visita($_GET);
+        $visita = new Visita($_GET);
         $resultado = $visita->eliminar();
 
     } catch (PDOException $e) {

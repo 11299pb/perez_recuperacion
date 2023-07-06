@@ -52,12 +52,12 @@ try {
                                 ?>
                                 <tr>
                                     <td><?= $key + 1 ?></td>
-                                    <td><?= $visita['VIV_NUM_VIV'] ?></td>
-                                    <td><?= $visita['VIV_NOMBRE'] ?></td>
-                                    <td><?= $visita['VIV_FECHA'] ?></td>
-                                    <td><?= $visita['VIV_VISITANTE'] ?></td>
-                                    <td><a class="btn btn-warning w-100" href="/perez_recuperacion/vistas/citas/detalle.php?viv_nombre=<?= $cita['VIV_NOMBRE'] ?>">VER DETALLE</a></td>
-                                    <td><a class="btn btn-danger w-100" href="/perez_recuperacion/controladores/citas/eliminar.php?viv_fecha=<?= $cita['VIV_FECHA'] ?>">ELIMINAR</a></td>
+                                    <td><?= $visitas['VIV_NUM_VIV'] ?></td>
+                                    <td><?= $visitas['VIV_NOMBRE'] ?></td>
+                                    <td><?= $visitas['VIV_FECHA'] ?></td>
+                                    <td><?= $visitas['VIV_VISITANTE'] ?></td>
+                                    <td><a class="btn btn-warning w-100" href="/perez_recuperacion/vistas/vivienda/detalle.php?viv_nombre=<?= $visita['VIV_NOMBRE'] ?>">VER DETALLE</a></td>
+                                    <td><a class="btn btn-danger w-100" href="/perez_recuperacion/controladores/vivienda/eliminar.php?viv_fecha=<?= $visita['VIV_FECHA'] ?>">ELIMINAR</a></td>
                                 </tr>
                             <?php endforeach ?>
                         <?php else : ?>
