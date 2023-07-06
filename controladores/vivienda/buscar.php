@@ -35,10 +35,10 @@ try {
                     <thead class="table-green">
                         <tr>
                             <th>No.</th>
+                            <th>Num. Vivienda</th>
                             <th>NOMBRE</th>
-                            <th>DPI</th>
-                            <th>HORA DE INGRESO</th>
-                            <th>HORA SALIDA</th>
+                            <th>FECHA</th>
+                            <th>NOMBRE A QUIEN VISITA</th>
                             <th>MODIFICAR</th>
                             <th>ELIMINAR</th>
                         </tr>
@@ -52,12 +52,12 @@ try {
                                 ?>
                                 <tr>
                                     <td><?= $key + 1 ?></td>
-                                    <td><?= $visita['VIS_NOMBRE'] ?></td>
-                                    <td><?= $visita['VIS_DPI'] ?></td>
-                                    <td><?= $visita['VIS_H_INGRESO'] ?></td>
-                                    <td><?= $visita['VIS_H_SALIDA'] ?></td>
-                                    <td><a class="btn btn-warning w-100" href="/perez_recuperacion/vistas/citas/detalle.php?vis_nombre=<?= $cita['VIS_NOMBRE'] ?>">VER DETALLE</a></td>
-                                    <td><a class="btn btn-danger w-100" href="/perez_recuperacion/controladores/citas/eliminar.php?vis_dpi=<?= $cita['VIS_DPI'] ?>">ELIMINAR</a></td>
+                                    <td><?= $visita['VIV_NUM_VIV'] ?></td>
+                                    <td><?= $visita['VIV_NOMBRE'] ?></td>
+                                    <td><?= $visita['VIV_FECHA'] ?></td>
+                                    <td><?= $visita['VIV_VISITANTE'] ?></td>
+                                    <td><a class="btn btn-warning w-100" href="/perez_recuperacion/vistas/citas/detalle.php?viv_nombre=<?= $cita['VIV_NOMBRE'] ?>">VER DETALLE</a></td>
+                                    <td><a class="btn btn-danger w-100" href="/perez_recuperacion/controladores/citas/eliminar.php?viv_fecha=<?= $cita['VIV_FECHA'] ?>">ELIMINAR</a></td>
                                 </tr>
                             <?php endforeach ?>
                         <?php else : ?>
